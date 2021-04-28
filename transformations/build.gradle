@@ -2,14 +2,14 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'
 
 android {
-  compileSdkVersion COMPILE_SDK_VERSION as int
-  buildToolsVersion BUILD_TOOLS_VERSION
+  compileSdkVersion 27
+  buildToolsVersion "27.0.3"
 
   defaultConfig {
-    minSdkVersion MIN_SDK_VERSION as int
-    targetSdkVersion TARGET_SDK_VERSION as int
-    versionCode "git rev-list origin/master --count".execute().text.toInteger()
-    versionName VERSION_NAME
+    minSdkVersion 14
+    targetSdkVersion 27
+    versionCode 1
+    versionName "3.1.1"
 
     consumerProguardFiles 'proguard-rules.txt'
   }
@@ -22,13 +22,10 @@ dependencies {
 }
 
 publish {
-  userOrg = POM_DEVELOPER_ID
-  groupId = GROUP
-  artifactId = ARTIFACT_ID
-  publishVersion = VERSION_NAME
-  desc = POM_DESCRIPTION
-  website = POM_URL
-  bintrayUser = BINTRAY_USER
-  bintrayKey = BINTRAY_API_KEY
+  userOrg = "muun"
+  groupId = "com.muun.glide-transformations"
+  artifactId = "transformations"
+  publishVersion = "3.1.1"
+  desc = ""
   autoPublish = false
 }
